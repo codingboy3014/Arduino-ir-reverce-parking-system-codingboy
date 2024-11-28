@@ -1,0 +1,32 @@
+// Define pins
+#define irSensorPin 7  // IR sensor pin
+#define redLedPin 8    // Red LED pin
+#define greenLedPin 9  // Green LED pin
+#define buzzerPin 10   // Buzzer pin
+
+void setup() {
+  // Initialize the sensor and LEDs as input/output
+  pinMode(irSensorPin, INPUT);
+  pinMode(redLedPin, OUTPUT);
+  pinMode(greenLedPin, OUTPUT);
+  pinMode(buzzerPin, OUTPUT);
+  
+  // Turn off LEDs and buzzer at the start
+  digitalWrite(redLedPin, LOW);
+  digitalWrite(greenLedPin, LOW);
+  digitalWrite(buzzerPin, LOW);
+}
+
+void loop() {
+  int sensorValue = digitalRead(irSensorPin);  // Read the value from the IR sensor
+
+  if (sensorValue == LOW) {  // If an object is detected (IR sensor detects low)
+    digitalWrite(redLedPin, HIGH);   // Turn on red LED
+    digitalWrite(greenLedPin, LOW);  // Turn off green LED
+    digitalWrite(buzzerPin, HIGH);   // Turn on buzzer (alarm)
+  } else {  // If no object is detected
+    digitalWrite(redLedPin, LOW);    // Turn off red LED
+    digitalWrite(greenLedPin, HIGH); // Turn on green LED
+    digitalWrite(buzzerPin, LOW);    // Turn off buzzer (alarm)
+  }
+}
