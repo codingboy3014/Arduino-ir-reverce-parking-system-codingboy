@@ -1,0 +1,17 @@
+Components Needed:
+
+IR sensor
+Buzzer (for alarm)
+Red LED (for object detection)
+Green LED (for no object detected)
+Arduino Uno
+
+Circuit:
+
+Connect the IR sensor’s VCC to 5V, GND to GND, and OUT pin to a digital input pin (e.g., pin 7).
+
+Connect the red LED to a digital pin (e.g., pin 8) with a current-limiting resistor.
+
+Connect the green LED to another digital pin (e.g., pin 9) with a current-limiting resistor.
+
+Connect the buzzer to a digital pin (e.g., pin 10).
